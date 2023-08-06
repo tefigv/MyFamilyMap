@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
                 rRequest = new RegisterRequest(username,password,email,firstName,lastName,gender);
                 rResult = proxy.register(rRequest);
 
-                if(rResult.isSuccess() == false)
+                if(!rResult.isSuccess())
                 {
                     throw new Exception();
                 }
@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 lRequest = new LoginRequest(username,password);
                 lResult = proxy.login(lRequest);
 
-                if(lResult.isSuccess() == false)
+                if(!lResult.isSuccess())
                 {
                     throw new Exception();
                 }
