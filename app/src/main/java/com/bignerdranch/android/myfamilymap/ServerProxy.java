@@ -129,9 +129,6 @@ public class ServerProxy {
 
             Gson gson = new Gson();
 
-
-
-
             InputStream resBody = null;
             if (http.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 resBody = http.getInputStream();
@@ -139,14 +136,10 @@ public class ServerProxy {
             }else{
                 System.out.println(http.getResponseMessage());
                 resBody = http.getErrorStream();
-                
-
             }
 
             String resData = readString(resBody);
             result = gson.fromJson(resData, PersonResult.class);
-
-            
 
         }catch (MalformedURLException e){
             System.out.println(http.getResponseMessage());

@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
                     throw new Exception();
                 }
 
-
+                personResult = proxy.getPerson();
 
                 Message message = Message.obtain();
                 Bundle bundle = new Bundle();
@@ -287,8 +287,6 @@ public class MainActivity extends AppCompatActivity {
                 message.setData(bundle);
                 handler.sendMessage(message);
 
-
-                personResult = proxy.getPerson();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (Exception e) {
